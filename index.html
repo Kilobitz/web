@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>kiloBITz Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     body {
       margin: 0;
@@ -214,6 +215,8 @@
         <input type="email" name="email" placeholder="Your Email" required />
         <input type="tel" name="phone" placeholder="Your Phone" />
         <textarea name="message" placeholder="How can we help?" rows="5" required></textarea>
+          <!-- Google CAPTCHA -->
+          <div class="g-recaptcha" data-sitekey="6Lfhw0ArAAAAAAm2MUcI59VcnWaSxQzSppiOXU_n"></div>
         <button type="submit">Send Message</button>
       </form>
     </div>
