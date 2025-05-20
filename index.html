@@ -1,47 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kilobitz Solutions</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kiloBITz Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(13, 27, 42, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    header img {
+      height: 48px;
+    }
+    nav a {
+      color: #ffffff;
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #58a6ff;
+    }
+    .hero {
+      background-color: #f4f4f4;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #0d1b2a;
+    }
+    .hero h2 {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #005f99;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #333;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 32px;
+      color: #0d1b2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h3 {
+      color: #005f99;
+    }
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+    .section-box {
+      background-color: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 48px;
+    }
+    .service-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .service-box {
+      flex: 1 1 30%;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease-in-out;
+    }
+    .service-box:hover {
+      transform: translateY(-5px);
+    }
+    .service-box h3 {
+      margin-top: 0;
+      color: #005f99;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form input, form textarea {
+      margin-bottom: 16px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      padding: 14px;
+      background-color: #0d1b2a;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background-color: #173a5e;
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="overlay">
-      <h1>KiloBITz Solutions</h1>
-      <p>every BIT matters</p>
-      <p>Powering IT innovation through hardware, software, and services</p>
-      <a href="#contact" class="btn">Contact Us</a>
-    </div>
+  <header>
+    <img src="/mnt/data/kilobitz-resized.png" alt="kiloBITz Solutions Logo" />
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">Why kiloBITz</a>
+      <a href="#engagement">Engagement Models</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
   </header>
-  <main>
-    <section class="features">
-      <h2>Our Expertise</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Hardware Solutions</h3>
-          <p>From procurement to deployment—enterprise-grade systems configured for performance and scale.</p>
-        </div>
-        <div class="card">
-          <h3>Software Licensing</h3>
-          <p>Access discounted, compliant licensing across top vendors with seamless integration support.</p>
-        </div>
-        <div class="card">
-          <h3>IT Services</h3>
-          <p>Provision MSP services, cloud migrations, and custom solutions</p>
-        </div>
+
+  <div class="hero">
+    <h2>Every BIT Matters.</h2>
+    <h1>kiloBITz Solutions</h1>
+    <p>Technology leadership and advisory services designed to align IT with business goals.</p>
+  </div>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-box">
+        <h3>Technology Advisory & Fractional CIO</h3>
+        <p>Strategic IT leadership without the overhead. Assess current state, define priorities, and align technology with business outcomes. Identify gaps, reduce risk, and guide vendor, MSP, and solution decisions with an objective, experienced perspective.</p>
       </div>
-    </section>
-    <section id="contact" class="contact">
-      <h2>Get in Touch</h2>
-      <!--
-      <p>Email us at <a href="mailto:???@kilobitz.net">???@kilobitz.net</a> to explore how we can help you.</p>
-    -->
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Kilobitz. All rights reserved.</p>
-  </footer>
+      <div class="service-box">
+        <h3>Hardware & Software Sourcing</h3>
+        <p>From SMB to enterprise, we help define requirements and secure the right hardware and software at the best available pricing. We don’t operate as a traditional reseller. Instead, we act as your advocate by identifying needs and, when appropriate, leveraging trusted partner networks to access competitive pricing without compromising fit or quality.</p>
+      </div>
+      <div class="service-box">
+        <h3>Vendor & MSP Evaluation</h3>
+        <p>We assess, recommend, and facilitate the selection of service providers who meet your operational and strategic needs. Whether you're vetting an MSP or transitioning from an existing one, we ensure alignment, accountability, and delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="section-box">
+      <h2>Why kiloBITz</h2>
+      <ul>
+        <li>Client-first approach: We represent your goals, not vendor incentives, and only recommend partner-sourced solutions when they’re the best fit.</li>
+        <li>20+ years of IT leadership: Deep experience across infrastructure, applications, security, IT Governance, Negotiations, and vendor management.</li>
+        <li>Business-aligned IT: Solutions that make sense operationally and financially, not just technically.</li>
+        <li>Unbiased guidance: No sales quotas, no preferred vendors. Just practical, proven advice.</li>
+        <li>Flexible engagement: Support where you need it most, and only when you need it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="engagement">
+    <div class="section-box">
+      <h2>Engagement Models</h2>
+      <h3>Fractional CIO</h3>
+      <p>Ongoing executive-level IT leadership on a part-time basis. Ideal for organizations without a full-time CIO or those needing transitional leadership.</p>
+
+      <h3>Project-Based Advisory</h3>
+      <p>Targeted support for technology initiatives, vendor transitions, security assessments, infrastructure upgrades, and more.</p>
+
+      <h3>Vendor Evaluation & Facilitation</h3>
+      <p>Independent analysis and support for selecting MSPs, software platforms, or hardware solutions. Includes pricing facilitation through trusted partner networks.</p>
+
+      <h3>Hourly Consulting</h3>
+      <p>Flexible expert input for short-term needs, leadership coverage, or internal team support.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-box">
+      <h2>Contact Us</h2>
+      <form action="mailto:info@kilobitz.com" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="email" name="Email" placeholder="Your Email" required />
+        <input type="tel" name="Phone" placeholder="Your Phone" />
+        <textarea name="Message" placeholder="How can we help?" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 </body>
 </html>
