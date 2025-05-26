@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kiloBITz Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    header img {
+      height: 48px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+    nav a {
+      color: #005f99;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #58a6ff;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #005f99;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 32px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        padding: 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#">
+      <img src="logo.png" alt="kiloBITz Solutions Logo" />
+    </a>
+    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-links" onclick="this.classList.remove('active')">
+      <a href="#services">Services</a>
+      <a href="#why">Why kiloBITz</a>
+      <a href="#engagement">Engagement Models</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+</body>
+</html>
