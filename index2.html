@@ -27,13 +27,12 @@
     header img {
       height: 48px;
     }
-    .nav-links {
+    nav {
       display: flex;
-      gap: 24px;
-      align-items: center;
     }
     nav a {
       color: #005f99;
+      margin-left: 24px;
       text-decoration: none;
       font-weight: 500;
       font-size: 16px;
@@ -42,38 +41,284 @@
     nav a:hover {
       color: #58a6ff;
     }
-    .menu-toggle {
+    
+    /* Hamburger Menu Styles */
+    .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      padding: 4px;
     }
-    .menu-toggle span {
-      height: 3px;
+    
+    .hamburger span {
       width: 25px;
-      background: #005f99;
-      margin: 4px 0;
-      transition: all 0.3s ease;
+      height: 3px;
+      background-color: #005f99;
+      margin: 3px 0;
+      transition: 0.3s;
+      border-radius: 2px;
     }
+    
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      padding: 20px 0;
+    }
+    
+    .mobile-nav.active {
+      display: flex;
+    }
+    
+    .mobile-nav a {
+      color: #005f99;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 15px 32px;
+      transition: all 0.3s;
+      border-bottom: 1px solid rgba(0, 95, 153, 0.1);
+    }
+    
+    .mobile-nav a:hover {
+      color: #58a6ff;
+      background-color: rgba(88, 166, 255, 0.05);
+    }
+    
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+    
+    /* Media Queries */
     @media (max-width: 768px) {
-      .nav-links {
+      header {
+        padding: 16px 20px;
+      }
+      
+      nav {
         display: none;
-        position: absolute;
-        top: 70px;
-        right: 32px;
-        background: white;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+      
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero h2 {
+        font-size: 20px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .service-grid {
         flex-direction: column;
-        padding: 16px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        z-index: 1001;
       }
-      .nav-links.active {
-        display: flex;
+      
+      .service-box {
+        flex: 1 1 100%;
       }
-      .menu-toggle {
-        display: flex;
+      
+      section {
+        padding: 40px 15px;
       }
+      
+      .parallax-section {
+        background-attachment: scroll;
+        min-height: 200px;
+        max-height: 240px;
+      }
+      
+      .parallax-section h2 {
+        font-size: 28px;
+      }
+    }
+    
+    .hero {
+      background-image: url('background.png');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 160px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    .hero h1,
+    .hero h2,
+    .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .hero h2 {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #aadfff;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #eee;
+    }
+    .parallax-section {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      min-height: 280px;
+      max-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 40px 20px;
+    }
+    .parallax-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+    .parallax-section h2 {
+      position: relative;
+      z-index: 1;
+      font-size: 40px;
+      color: #fff;
+      margin: 0;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 32px;
+      color: #0d1b2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h3 {
+      color: #005f99;
+    }
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+    .section-box {
+      background-color: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 48px;
+      transition: transform 0.2s ease-in-out;
+    }
+    .section-box:hover {
+      transform: translateY(-5px);
+    }
+    .service-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .service-box {
+      flex: 1 1 30%;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease-in-out;
+    }
+    .service-box:hover {
+      transform: translateY(-5px);
+    }
+    .service-box h3 {
+      margin-top: 0;
+      color: #005f99;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form input, form textarea {
+      margin-bottom: 16px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      padding: 14px;
+      background-color: #0d1b2a;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background-color: #173a5e;
+    }
+    .section-box p {
+      margin-bottom: 32px;
+    }
+    .g-recaptcha {
+      margin-bottom: 24px;
+    }
+    .section-box p:last-child {
+      margin-bottom: 0;
     }
   </style>
 </head>
@@ -82,17 +327,23 @@
     <a href="#">
       <img src="logo.png" alt="kiloBITz Solutions Logo" />
     </a>
-    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav class="nav-links" onclick="this.classList.remove('active')">
+    <nav>
       <a href="#services">Services</a>
       <a href="#why">Why kiloBITz</a>
       <a href="#engagement">Engagement Models</a>
       <a href="#contact">Contact Us</a>
     </nav>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services" onclick="closeMobileNav()">Services</a>
+      <a href="#why" onclick="closeMobileNav()">Why kiloBITz</a>
+      <a href="#engagement" onclick="closeMobileNav()">Engagement Models</a>
+      <a href="#contact" onclick="closeMobileNav()">Contact Us</a>
+    </div>
   </header>
 
   <div class="hero">
@@ -159,7 +410,7 @@
   </section>
 
   <div class="parallax-section" style="background-image: url('background3.png');">
-    <h2>Let’s Build Something Better Together</h2>
+    <h2>Let's Build Something Better Together</h2>
   </div>
 
   <section id="contact">
@@ -179,5 +430,40 @@
   <p style="text-align:center; font-size:14px; color:#888;">
     © 2025 kiloBITz Solutions • <a href="/privacy.html">Privacy Policy</a>
   </p>
+
+  <script>
+    function toggleMobileNav() {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    }
+    
+    function closeMobileNav() {
+      const hamburger = document.querySelector('.hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+    }
+    
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(event) {
+      const header = document.querySelector('header');
+      const mobileNav = document.getElementById('mobileNav');
+      
+      if (!header.contains(event.target) && mobileNav.classList.contains('active')) {
+        closeMobileNav();
+      }
+    });
+    
+    // Close mobile nav on window resize if desktop view
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        closeMobileNav();
+      }
+    });
+  </script>
 </body>
 </html>
