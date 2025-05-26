@@ -145,10 +145,18 @@
         padding: 40px 15px;
       }
       
+      .hero {
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 300px;
+        padding: 80px 20px;
+      }
+      
       .parallax-section {
-        background-attachment: fixed;
-        min-height: 200px;
-        max-height: 240px;
+        background-attachment: scroll;
+        background-size: cover;
+        min-height: 180px;
+        max-height: 200px;
       }
       
       .parallax-section h2 {
@@ -159,13 +167,15 @@
     .hero {
       background-image: url('background.png');
       background-attachment: fixed;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+      background-color: #0d1b2a;
       color: white;
-      padding: 160px 20px;
+      padding: 120px 20px;
       text-align: center;
       position: relative;
+      min-height: 400px;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
@@ -204,12 +214,13 @@
     }
     .parallax-section {
       background-attachment: fixed;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+      background-color: #0d1b2a;
       color: white;
-      min-height: 280px;
-      max-height: 320px;
+      min-height: 250px;
+      max-height: 280px;
       display: flex;
       align-items: center;
       justify-content: center;
