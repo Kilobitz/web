@@ -148,15 +148,16 @@
       .hero {
         background-size: cover;
         background-attachment: scroll;
-        min-height: 300px;
+        min-height: 350px;
         padding: 80px 20px;
       }
       
       .parallax-section {
         background-attachment: scroll;
         background-size: cover;
-        min-height: 180px;
-        max-height: 200px;
+        min-height: 200px;
+        max-height: 250px;
+        padding: 40px 20px;
       }
       
       .parallax-section h2 {
@@ -167,17 +168,16 @@
     .hero {
       background-image: url('background.png');
       background-attachment: fixed;
-      background-size: contain;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #0d1b2a;
       color: white;
       padding: 120px 20px;
       text-align: center;
       position: relative;
-      min-height: 400px;
+      min-height: 500px;
+      image-rendering: auto;
       image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
     }
     .hero::before {
       content: "";
@@ -214,21 +214,20 @@
     }
     .parallax-section {
       background-attachment: fixed;
-      background-size: contain;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #0d1b2a;
       color: white;
-      min-height: 250px;
-      max-height: 280px;
+      min-height: 300px;
+      max-height: 350px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       position: relative;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      image-rendering: auto;
       image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
       will-change: transform;
     }
     .parallax-section::before {
